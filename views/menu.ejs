@@ -1,0 +1,16 @@
+<%if(locals.user){%>
+	<div class="menu">
+		<div class="pull-right">
+			<span class="name"><%= user.name %></span>
+			<a href="/msg/add">发消息</a>
+			<a href="/user/logout">退出</a>
+		</div>
+	</div>
+<%}else{%>
+	<div class="menu">
+		<div class="pull-right">
+			<a href="/user/login">登录</a>
+			<a href="/user/register">注册</a>
+		</div>
+	</div>
+<%}%>

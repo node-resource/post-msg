@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+	<% include menu %>
+	<div class="wrap">
+		<div class="panel">
+			<div class="panel-title"> 
+				<h2><%= title %></h2>	
+			</div>
+			<div class="panel-body">
+				<div class="msg-box">
+					<% data.forEach(function(item) {%>
+						<div class="msg-item">
+							<h3><%= item.title %></h3>
+							<p><%= item.content %></p>
+							<span>Posted by :<b><%= item.author %></b></span>
+						</div>
+					<%})%>
+				</div>
+				<% include pager %>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

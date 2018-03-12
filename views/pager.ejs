@@ -1,0 +1,31 @@
+<div class="pager">
+	<% if(page.pageCount > 1) {%>
+		<% if(page.pageIndex > 1) { %>
+		  <a class="page-ctrl-btn" href="/msg/list/1">首页</a>
+		<% } else {%>
+		  <span class="page-ctrl-btn page-disable">首页</span>
+		<% } %>
+		<% if(page.pageIndex >1) { %>
+		  <a class="page-ctrl-btn" href="/msg/list/<%= page.pageIndex-1 %>">前一页</a>
+		<% } else {%>
+		  <span class="page-ctrl-btn page-disable">前一页</span>
+		<% } %>
+		<% for(var i=1;i<=page.pageCount;i++) { %>
+		  <% if(page.pageIndex == i) { %>
+		  	<span class="page-btn page-active"><%= i %></span>
+		  <% } else { %>
+		  	<a class="page-btn" href="/msg/list/<%= i %>"><%= i %></a>
+		  <% } %>
+		<% } %>
+		<% if(page.pageIndex < page.pageCount) { %>
+		  <a class="page-ctrl-btn" href="/msg/list/<%= page.pageIndex*1 + 1 %>">后一页</a>
+		<% } else {%>
+		  <span class="page-ctrl-btn page-disable">后一页</span>
+		<% } %>
+		<% if(page.pageIndex < page.pageCount) { %>
+		  <a class="page-ctrl-btn" href="/msg/list/<%= page.pageCount %>">末页</a>
+		<% } else {%>
+		  <span class="page-ctrl-btn page-disable"> 末页</span>
+		<% } %>
+	<% } %>
+</div>
