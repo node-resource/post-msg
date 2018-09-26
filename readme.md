@@ -10,3 +10,6 @@
 
 ## 启动程序
 	npm start
+
+## 访问程序
+  localhost:5000
